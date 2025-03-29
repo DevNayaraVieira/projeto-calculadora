@@ -1,0 +1,337 @@
+/**
+ * Calculadora Profissional - Temas
+ * 
+ * Este arquivo contém as definições de cores e variáveis para
+ * os temas claro (rosa bebê) e escuro.
+ */
+
+/* ========================================
+   VARIÁVEIS DO TEMA - CLARO (Padrão)
+   ======================================== */
+   :root {
+    /* Cores primárias */
+    --rosa-bebe: #FFD1DC;
+    --rosa-claro: #FFDBE5;
+    --rosa-escuro: #FF9EB5;
+    --azul-claro: #B7DCFF;
+    --azul-medio: #62C4FF;
+    --azul-escuro: #4D97FF;
+    
+    /* Variáveis do tema claro */
+    --bg-gradient: linear-gradient(135deg, #FFE8EF 0%, #FFDBE5 100%);
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --text-color: #384861;
+    --shadow-color: rgba(171, 88, 120, 0.15);
+    --button-bg: rgba(255, 255, 255, 0.9);
+    --button-border: rgba(255, 255, 255, 0.2);
+    --button-shadow: 5px 5px 10px rgba(171, 88, 120, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+    --button-shadow-pressed: inset 5px 5px 10px rgba(171, 88, 120, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+    --button-hover: rgba(255, 224, 235, 0.8);
+    --display-bg: rgba(255, 255, 255, 0.5);
+    --display-shadow: 0 8px 32px rgba(171, 88, 120, 0.1);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+    --glass-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+    --digit-bg: rgba(255, 255, 255, 0.9);
+    --op-bg: rgba(183, 220, 255, 0.7);
+    --equals-bg: rgba(77, 151, 255, 0.8);
+    --clear-bg: rgba(255, 158, 181, 0.7);
+    --switch-bg: rgba(183, 220, 255, 0.3);
+    --blur-amount: 10px;
+    --memory-button-bg: rgba(255, 255, 255, 0.6);
+    --memory-button-color: #384861;
+    --history-toggle-bg: rgba(183, 220, 255, 0.3);
+    --history-toggle-color: #384861;
+}
+
+/* ========================================
+   CONFIGURAÇÕES VISUAIS DO TEMA CLARO
+   ======================================== */
+body {
+    background: var(--bg-gradient);
+}
+
+body::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23FFD1DC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.bg-decoration-1 {
+    background-color: var(--rosa-bebe);
+}
+
+.bg-decoration-2 {
+    background-color: var(--azul-claro);
+}
+
+.calculator {
+    background: var(--card-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border-radius: 30px;
+    border: var(--glass-border);
+    background-image: var(--glass-gradient);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.calculator:hover {
+    box-shadow: 0 25px 50px var(--shadow-color);
+}
+
+.calculator-display {
+    background: var(--display-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: var(--glass-border);
+}
+
+.calculator-display::before {
+    background: linear-gradient(135deg, transparent, var(--azul-claro));
+    opacity: 0.2;
+}
+
+.history-panel {
+    background: var(--display-bg);
+}
+
+.history-title i {
+    color: var(--azul-medio);
+}
+
+.calculator-key {
+    background: var(--button-bg);
+    border: 1px solid var(--button-border);
+    box-shadow: var(--button-shadow);
+    color: var(--text-color);
+}
+
+.calculator-key:active {
+    box-shadow: var(--button-shadow-pressed);
+}
+
+.key-digit {
+    background: var(--digit-bg);
+}
+
+.key-operation {
+    background: var(--op-bg);
+    color: var(--text-color);
+}
+
+.key-equals {
+    background: var(--equals-bg);
+    color: white;
+}
+
+.key-clear, .key-all-clear {
+    background: var(--clear-bg);
+    color: white;
+}
+
+.calculator-footer {
+    border-top: var(--glass-border);
+    background: var(--display-bg);
+}
+
+.memory-button {
+    background: var(--memory-button-bg);
+    color: var(--memory-button-color);
+    border: var(--glass-border);
+}
+
+.memory-button:hover {
+    background: var(--button-hover);
+}
+
+.history-toggle {
+    background: var(--history-toggle-bg);
+    color: var(--history-toggle-color);
+    border: var(--glass-border);
+}
+
+.history-toggle:hover {
+    background: var(--button-hover);
+}
+
+.theme-toggle {
+    background: var(--switch-bg);
+    border: var(--glass-border);
+    color: var(--text-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+    background: var(--button-hover);
+}
+
+.loading-overlay {
+    background: var(--bg-gradient);
+}
+
+.loading-spinner:before {
+    background-color: var(--rosa-bebe);
+}
+
+.loading-spinner:after {
+    background-color: var(--azul-claro);
+}
+
+.author-brand {
+    background: linear-gradient(135deg, var(--rosa-escuro), var(--azul-escuro));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   TEMA ESCURO
+   ======================================== */
+[data-theme="dark"] {
+    /* Variáveis do tema escuro */
+    --bg-gradient: linear-gradient(135deg, #31243A 0%, #2D1A20 100%);
+    --card-bg: rgba(55, 30, 50, 0.7);
+    --text-color: #E0E0E0;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --button-bg: rgba(90, 43, 75, 0.7);
+    --button-border: rgba(255, 255, 255, 0.05);
+    --button-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(80, 40, 65, 0.2);
+    --button-shadow-pressed: inset 5px 5px 10px rgba(0, 0, 0, 0.3), inset -5px -5px 10px rgba(80, 40, 65, 0.1);
+    --button-hover: rgba(100, 55, 85, 0.8);
+    --display-bg: rgba(45, 26, 32, 0.5);
+    --display-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-gradient: linear-gradient(135deg, rgba(80, 40, 65, 0.4), rgba(45, 26, 32, 0.2));
+    --digit-bg: rgba(71, 39, 57, 0.9);
+    --op-bg: rgba(42, 129, 176, 0.7);
+    --equals-bg: rgba(58, 114, 196, 0.8);
+    --clear-bg: rgba(148, 43, 71, 0.7);
+    --switch-bg: rgba(42, 129, 176, 0.3);
+    --blur-amount: 8px;
+    --memory-button-bg: rgba(71, 39, 57, 0.7);
+    --memory-button-color: #E0E0E0;
+    --history-toggle-bg: rgba(42, 129, 176, 0.3);
+    --history-toggle-color: #E0E0E0;
+}
+
+/* ========================================
+   CONFIGURAÇÕES ESPECÍFICAS DO TEMA ESCURO
+   ======================================== */
+[data-theme="dark"] body::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23333' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.4;
+}
+
+[data-theme="dark"] .theme-toggle i {
+    color: var(--text-color);
+}
+:root {
+    /* Cores primárias - Modifique para personalizar */
+    --rosa-bebe: #FFD1DC;       /* Altere para sua cor principal */
+    --rosa-claro: #FFDBE5;      /* Versão mais clara da cor principal */
+    --rosa-escuro: #FF9EB5;     /* Versão mais escura da cor principal */
+    --azul-claro: #B7DCFF;      /* Cor de destaque/complementar */
+    --azul-medio: #62C4FF;      /* Cor complementar média */
+    --azul-escuro: #4D97FF;     /* Cor complementar escura */
+    
+    /* Variáveis para o tema claro - Ajuste conforme necessário */
+    --bg-gradient: linear-gradient(135deg, #FFE8EF 0%, #FFDBE5 100%);
+    /* ... outras variáveis ... */
+}
+[data-theme="dark"] {
+    /* Variáveis do tema escuro */
+    --bg-gradient: linear-gradient(135deg, #3A1A29 0%, #1A2A40 100%);
+    /* outras variáveis permanecem as mesmas */
+}
+[data-theme="dark"] {
+    --bg-gradient: linear-gradient(135deg, #3A1A29 0%, #1A2A40 100%);
+    --card-bg: rgba(58, 26, 41, 0.7);
+    --button-bg: rgba(58, 26, 41, 0.7);
+    --glass-gradient: linear-gradient(135deg, rgba(58, 26, 41, 0.4), rgba(26, 42, 64, 0.2));
+    /* manter as outras propriedades */
+}
+/* Botão de Voltar ao Portfólio - Estilo Aprimorado */
+.portfolio-return-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #FF9EB5 0%, #FFC0CB 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 0 0 5px rgba(255, 158, 181, 0.5);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.portfolio-return-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 158, 181, 0.7);
+    color: #fff;
+}
+
+.portfolio-return-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de brilho suave */
+.portfolio-return-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.6s;
+    opacity: 0;
+}
+
+.portfolio-return-btn:hover::after {
+    opacity: 1;
+    animation: shine 1.5s infinite;
+}
+
+/* Ícone com animação */
+.portfolio-return-btn i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-return-btn:hover i {
+    transform: translateX(-3px);
+}
+
+/* Animação de brilho */
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Tema escuro */
+[data-theme="dark"] .portfolio-return-btn {
+    background: linear-gradient(135deg, #942B47 0%, #2D1A20 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 8px rgba(148, 43, 71, 0.4);
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 576px) {
+    .portfolio-return-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+        bottom: 20px;
+        left: 20px;
+    }
+}

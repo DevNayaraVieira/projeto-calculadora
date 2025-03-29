@@ -1,0 +1,645 @@
+/**
+ * Calculadora Profissional - Animações
+ * 
+ * Este arquivo contém todas as animações e efeitos visuais da calculadora,
+ * incluindo keyframes, transições e efeitos de hover.
+ */
+
+/* ========================================
+   ANIMAÇÕES PRINCIPAIS (KEYFRAMES)
+   ======================================== */
+
+/* Animação de flutuação para elementos de fundo */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animação de pulsação para elementos visuais */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Animação de ondulação para efeito de ripple nos botões */
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Animação de entrada deslizante */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animação de rotação */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animação sutil de brilho para botões */
+@keyframes shine {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ========================================
+   APLICAÇÃO DAS ANIMAÇÕES
+   ======================================== */
+
+/* Animações de elementos de fundo */
+.bg-decoration-1 {
+    animation: float 10s ease-in-out infinite;
+}
+
+.bg-decoration-2 {
+    animation: float 12s ease-in-out infinite reverse;
+}
+
+/* Animação do spinner de carregamento */
+.loading-spinner:before {
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.loading-spinner:after {
+    animation: pulse 2s ease-in-out infinite alternate;
+    animation-delay: 0.5s;
+}
+
+/* Animação de entrada para a calculadora */
+.calculator {
+    animation: slideIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Efeito de ripple nos botões */
+.calculator-key:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+    animation: ripple 0.5s ease-out;
+    pointer-events: none;
+}
+
+/* Botão de tema com rotação */
+.theme-toggle:hover {
+    animation: rotate 0.5s ease-in-out;
+}
+
+/* Efeito de brilho nos botões de igualdade */
+.key-equals {
+    background-image: linear-gradient(
+        90deg, 
+        var(--equals-bg) 0%, 
+        var(--equals-bg) 40%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        var(--equals-bg) 60%, 
+        var(--equals-bg) 100%
+    );
+    background-size: 200% 100%;
+    animation: shine 3s infinite linear;
+}
+
+/* Animação de foco para o resultado */
+.result-display.animate {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* Efeito de pressionar para botões */
+.calculator-key.pressed, 
+.memory-button.pressed, 
+.history-toggle.pressed {
+    transform: scale(0.95);
+}
+
+/* Efeito de destaque para botões de memória */
+.memory-button.highlight {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* ========================================
+   TRANSIÇÕES
+   ======================================== */
+
+/* Transição para o tema */
+body, 
+.calculator, 
+.calculator-display, 
+.operation-display, 
+.result-display, 
+.calculator-key, 
+.memory-button, 
+.history-toggle,
+.theme-toggle,
+.author-info {
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Transição específica para botões */
+.calculator-key, 
+.memory-button, 
+.history-toggle {
+    transition-property: transform, box-shadow, background-color;
+}
+
+/* Transição para hover nos botões */
+.calculator-key:hover, 
+.memory-button:hover, 
+.history-toggle:hover {
+    transform: translateY(-2px);
+}
+
+/* Transição para clique nos botões */
+.calculator-key:active, 
+.memory-button:active, 
+.history-toggle:active {
+    transition-duration: 0.1s;
+}
+
+/* Transição para o resultado em destaque */
+.result-display.highlight {
+    color: var(--equals-bg);
+    transition: color 0.3s ease-in-out;
+}
+
+/* ========================================
+   EFEITOS VISUAIS ESPECÍFICOS
+   ======================================== */
+
+/* Efeito de destaque na tecla de igualdade quando pressionada */
+.key-equals:active {
+    box-shadow: 0 0 15px var(--equals-bg);
+}
+
+/* Efeito de destaque na tecla de limpar quando pressionada */
+.key-all-clear:active, .key-clear:active {
+    box-shadow: 0 0 15px var(--clear-bg);
+}
+
+/* Efeito de destaque nas teclas de operação quando pressionadas */
+.key-operation:active {
+    box-shadow: 0 0 15px var(--op-bg);
+}
+
+/* Efeito de ondulação no display */
+.calculator-display::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--azul-medio), transparent);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.calculator:hover .calculator-display::after {
+    opacity: 0.3;
+}
+
+/* Efeito de iluminação quando a operação está ativa */
+.calculator.operation-active .calculator-display {
+    box-shadow: 0 0 20px rgba(var(--azul-claro), 0.2) inset;
+}
+/**
+ * Calculadora Profissional - Animações Aprimoradas
+ * 
+ * Efeitos visuais avançados e animações sofisticadas para uma
+ * experiência premium na calculadora.
+ * 
+ * @version 2.0.0
+ * @author Nayara Nunes Vieira
+ */
+
+/* ========================================
+   ANIMAÇÕES PRINCIPAIS (KEYFRAMES)
+   ======================================== */
+
+/* Animação de flutuação com movimento mais orgânico */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Animação de pulsação com brilho */
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.6;
+        filter: brightness(1) blur(var(--blur-amount));
+    }
+    50% {
+        opacity: 0.9;
+        filter: brightness(1.2) blur(calc(var(--blur-amount) * 0.8));
+    }
+}
+
+/* Animação de ondulação mais suave para efeito de ripple */
+@keyframes ripple-advanced {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Animação de entrada elegante */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animação para transição de tema */
+@keyframes theme-transition {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Brilho para botões especiais */
+@keyframes button-shine {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Animação de pop para feedback de clique */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(0.95);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animação para o histórico expandindo */
+@keyframes expand {
+    from {
+        opacity: 0;
+        transform: scaleY(0.8);
+        transform-origin: top;
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+/* Animação para resultado destacado */
+@keyframes highlight-result {
+    0% {
+        color: var(--text-color);
+        text-shadow: none;
+    }
+    30% {
+        color: var(--equals-bg);
+        text-shadow: 0 0 8px var(--equals-bg);
+    }
+    100% {
+        color: var(--text-color);
+        text-shadow: none;
+    }
+}
+
+/* Animação para mudança de tema */
+@keyframes theme-rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* ========================================
+   APLICAÇÃO DE EFEITOS AVANÇADOS
+   ======================================== */
+
+/* Efeito de transição de tema no corpo */
+body {
+    transition: background 1s cubic-bezier(0.22, 1, 0.36, 1), 
+                color 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Aplicar transição suave ao trocar tema */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-gradient);
+    z-index: -2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.theme-transitioning::after {
+    opacity: 1;
+}
+
+/* Animações aprimoradas para elementos de fundo */
+.bg-decoration-1 {
+    animation: float 15s ease-in-out infinite;
+    transition: opacity 1.5s ease, background-color 1.5s ease;
+}
+
+.bg-decoration-2 {
+    animation: float 18s ease-in-out infinite reverse;
+    animation-delay: 0.5s;
+    transition: opacity 1.5s ease, background-color 1.5s ease;
+}
+
+/* Efeito de brilho na mudança de tema */
+.theme-toggle {
+    overflow: hidden;
+}
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.theme-toggle.active::before {
+    width: 150px;
+    height: 150px;
+    transition: width 0.8s ease-out, height 0.8s ease-out;
+}
+
+/* Animação melhorada para a calculadora */
+.calculator {
+    animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), 
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 1s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Efeito de ripple avançado para botões */
+.calculator-key {
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator-key::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.calculator-key.clicked::after {
+    animation: ripple-advanced 0.6s ease-out;
+}
+
+/* Efeito especial para botão de igual */
+.key-equals {
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 100%;
+    background-image: linear-gradient(
+        90deg, 
+        var(--equals-bg) 0%, 
+        var(--equals-bg) 40%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        var(--equals-bg) 60%, 
+        var(--equals-bg) 100%
+    );
+    animation: button-shine 3s infinite linear;
+    animation-play-state: paused;
+}
+
+.key-equals:hover {
+    animation-play-state: running;
+}
+
+/* Animação de pop para botões quando pressionados */
+.calculator-key.pressed, 
+.history-toggle.pressed,
+.theme-toggle.pressed {
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Histórico com animação de expansão */
+.history-panel.visible {
+    animation: expand 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Animação para resultado em destaque */
+.result-display.highlight {
+    animation: highlight-result 1.2s ease-in-out;
+}
+
+/* Animação especial para o toggle de tema */
+.theme-toggle.theme-changing {
+    animation: theme-rotate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Efeito de partículas para botões especiais */
+.key-equals.clicked .particle,
+.key-all-clear.clicked .particle,
+.key-operation.clicked .particle {
+    animation: particle-float 0.6s ease-out;
+}
+
+/* ========================================
+   EFEITOS DE MUDANÇA DE TEMA AVANÇADOS
+   ======================================== */
+
+/* Entrada triunfal ao carregar */
+.calculator-wrapper {
+    opacity: 0;
+    animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+/* Melhorias visuais no tema escuro */
+[data-theme="dark"] .calculator {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .calculator-display {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .calculator-key {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Efeito de brilho para operadores em modo escuro */
+[data-theme="dark"] .key-operation,
+[data-theme="dark"] .key-equals {
+    text-shadow: 0 0 5px var(--azul-claro);
+}
+
+/* Efeito de contraste para resultado em modo escuro */
+[data-theme="dark"] .result-display {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   AJUSTES PARA MELHORAR EXPERIÊNCIA VISUAL
+   ======================================== */
+
+/* Ajuste para display da calculadora com transição suave */
+.calculator-display {
+    transition: background-color 0.8s ease, box-shadow 0.8s ease;
+}
+
+.operation-display, 
+.result-display {
+    transition: color 0.8s ease, text-shadow 0.8s ease;
+}
+
+/* Adiciona efeito fluido para os botões */
+.calculator-key {
+    transition: background-color 0.5s ease, 
+                color 0.5s ease, 
+                transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.5s ease;
+}
+
+.calculator-key:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.calculator-key:active {
+    transform: translateY(1px);
+    transition: transform 0.1s;
+}
+
+/* Ajuste para botão de histórico para movimento mais natural */
+.history-toggle {
+    transition: background-color 0.5s ease, 
+                color 0.5s ease, 
+                transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.5s ease;
+}
+
+.history-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.history-toggle:active {
+    transform: translateY(1px);
+}
+
+/* Histórico com deslocamento mais suave */
+.history-list li {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.history-list li:hover {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   SUPORTE PARA PREFERÊNCIAS DO SISTEMA
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001s !important;
+    }
+}

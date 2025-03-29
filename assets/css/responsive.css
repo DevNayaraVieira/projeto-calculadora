@@ -1,0 +1,333 @@
+/**
+ * Calculadora Profissional - Responsividade
+ * 
+ * Este arquivo contém todas as regras de mídia (media queries)
+ * para garantir que a calculadora seja responsiva e se adapte
+ * a diferentes tamanhos de tela.
+ */
+
+/* ========================================
+   TABLETS (até 768px)
+   ======================================== */
+   @media (max-width: 768px) {
+    .calculator-wrapper {
+        max-width: 350px;
+    }
+    
+    .bg-decoration-1 {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .bg-decoration-2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ========================================
+   SMARTPHONES GRANDES (até 576px)
+   ======================================== */
+@media (max-width: 576px) {
+    .calculator-wrapper {
+        max-width: 320px;
+    }
+    
+    .calculator-keypad {
+        grid-gap: 10px;
+        padding: 15px;
+    }
+    
+    .calculator-key {
+        height: 60px;
+        font-size: 18px;
+    }
+    
+    .calculator-key i {
+        font-size: 16px;
+    }
+    
+    .result-display {
+        font-size: 36px;
+    }
+    
+    .operation-display {
+        font-size: 14px;
+    }
+    
+    .calculator-display {
+        padding: 25px 20px 15px;
+    }
+    
+    .calculator-footer {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .memory-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+    
+    .memory-button, .history-toggle {
+        padding: 6px 8px;
+        font-size: 12px;
+        justify-content: center;
+    }
+    
+    .memory-button i, .history-toggle i {
+        margin-right: 3px;
+        font-size: 10px;
+    }
+    
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* ========================================
+   SMARTPHONES PEQUENOS (até 400px)
+   ======================================== */
+@media (max-width: 400px) {
+    .calculator-wrapper {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .calculator-keypad {
+        grid-gap: 8px;
+        padding: 12px;
+    }
+    
+    .calculator-key {
+        height: 55px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+    
+    .calculator-key i {
+        font-size: 14px;
+    }
+    
+    .result-display {
+        font-size: 30px;
+        height: 40px;
+    }
+    
+    .operation-display {
+        font-size: 12px;
+        height: 16px;
+    }
+    
+    .calculator-display {
+        padding: 20px 15px 12px;
+    }
+    
+    .history-content {
+        padding: 12px 15px;
+    }
+    
+    .history-title {
+        font-size: 12px;
+    }
+    
+    .history-list {
+        font-size: 11px;
+    }
+    
+    .memory-button, .history-toggle {
+        padding: 5px 6px;
+        font-size: 11px;
+    }
+    
+    .author-info {
+        font-size: 11px;
+    }
+    
+    .author-brand {
+        font-size: 12px;
+    }
+    
+    /* Ajustar blur para melhorar a performance em dispositivos mais fracos */
+    :root {
+        --blur-amount: 6px;
+    }
+    
+    [data-theme="dark"] {
+        --blur-amount: 5px;
+    }
+}
+
+/* ========================================
+   TELAS MUITO PEQUENAS (até 320px)
+   ======================================== */
+@media (max-width: 320px) {
+    .calculator-keypad {
+        grid-gap: 6px;
+        padding: 10px;
+    }
+    
+    .calculator-key {
+        height: 45px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    
+    .result-display {
+        font-size: 26px;
+        height: 35px;
+    }
+    
+    .operation-display {
+        font-size: 11px;
+    }
+    
+    .calculator-display {
+        padding: 18px 12px 10px;
+    }
+    
+    .memory-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 5px;
+    }
+    
+    /* Reduzir as decorações para melhorar a performance */
+    .bg-decoration-1, .bg-decoration-2 {
+        opacity: 0.3;
+    }
+    
+    /* Desativar algumas animações para melhorar a performance */
+    .bg-decoration-1, .bg-decoration-2 {
+        animation: none;
+    }
+    
+    /* Simplificar blur para melhorar a performance */
+    :root {
+        --blur-amount: 3px;
+    }
+    
+    [data-theme="dark"] {
+        --blur-amount: 2px;
+    }
+}
+
+/* ========================================
+   ALTURA BAIXA (ORIENTAÇÃO PAISAGEM LIMITADA)
+   ======================================== */
+@media (max-height: 500px) {
+    .calculator {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .calculator-keypad {
+        grid-gap: 8px;
+        padding: 10px;
+    }
+    
+    .calculator-key {
+        height: 40px;
+    }
+    
+    .calculator-display {
+        padding: 15px 20px 10px;
+    }
+    
+    .result-display {
+        font-size: 28px;
+        height: 35px;
+    }
+    
+    .operation-display {
+        margin-bottom: 3px;
+    }
+    
+    .calculator-footer {
+        padding: 8px 15px;
+    }
+    
+    .author-info {
+        margin-top: 10px;
+    }
+}
+
+/* ========================================
+   TELAS GRANDES (A PARTIR DE 992px)
+   ======================================== */
+@media (min-width: 992px) {
+    .calculator-wrapper {
+        max-width: 400px;
+    }
+    
+    .calculator-key {
+        height: 70px;
+        font-size: 22px;
+    }
+    
+    .calculator-key i {
+        font-size: 20px;
+    }
+    
+    .result-display {
+        font-size: 44px;
+        height: 60px;
+    }
+    
+    .operation-display {
+        font-size: 18px;
+        height: 24px;
+    }
+    
+    /* Aumentar blur para melhorar efeito visual em telas maiores */
+    :root {
+        --blur-amount: 15px;
+    }
+    
+    [data-theme="dark"] {
+        --blur-amount: 12px;
+    }
+}
+
+/* ========================================
+   SUPORTE A MOTION REDUZIDO (ACESSIBILIDADE)
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .bg-decoration-1, .bg-decoration-2 {
+        animation: none !important;
+    }
+    
+    .calculator:hover {
+        transform: none !important;
+    }
+    
+    .calculator-key:hover {
+        transform: none !important;
+    }
+}
+
+/* ========================================
+   SUPORTE A TEMA PREFERIDO DO SISTEMA
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    /* Esta regra é sobrescrita pelo controle manual de tema,
+       mas serve como fallback se nenhuma preferência for salva */
+    html:not([data-theme]) {
+        --bg-gradient: linear-gradient(135deg, #31243A 0%, #2D1A20 100%);
+        --card-bg: rgba(55, 30, 50, 0.7);
+        --text-color: #E0E0E0;
+    }
+}
