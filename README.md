@@ -66,10 +66,9 @@ calculadora-rosa/
 ## 📱 Capturas de Tela
 
 <!-- Substitua com suas próprias imagens quando disponíveis -->
-![Calculadora - Tema Claro](assets/img/print1.png)
-![Calculadora - Tema Escuro](assets/img/print2.png)
+![Calculadora - Tema Claro](assets/img/favicons/print1.png)
 
-=======
+![Calculadora - Tema Escuro](assets/img/favicons/print2.png)
 
 ## 💡 Uso
 
