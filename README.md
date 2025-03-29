@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Projeto Calculadora Profissional
+=======
+# Calculadora Profissional - Rosa Bebê com Detalhes em Azul
+>>>>>>> 23038c7324fb1e0520a958c5a95bfa09d806228e
 
 ![Versão](https://img.shields.io/badge/versão-1.0.0-FF9EB5)
 ![Status](https://img.shields.io/badge/status-finalizado-4D97FF)
@@ -64,8 +68,31 @@ calculadora-rosa/
 ## 📱 Capturas de Tela
 
 <!-- Substitua com suas próprias imagens quando disponíveis -->
+<<<<<<< HEAD
 ![Calculadora - Tema Claro](assets/img/print1.png)
 ![Calculadora - Tema Escuro](assets/img/print2.png)
+=======
+![Calculadora - Tema Claro](https://via.placeholder.com/400x700/FFD1DC/333333?text=Calculadora+Tema+Claro)
+![Calculadora - Tema Escuro](https://via.placeholder.com/400x700/2D1A20/FFFFFF?text=Calculadora+Tema+Escuro)
+
+## 📥 Instalação
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/calculadora-rosa.git
+   ```
+
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd calculadora-rosa
+   ```
+
+3. Abra o arquivo `index.html` em seu navegador ou use um servidor local:
+   ```bash
+   # Se você tiver o Node.js instalado:
+   npx serve
+   ```
+>>>>>>> 23038c7324fb1e0520a958c5a95bfa09d806228e
 
 ## 💡 Uso
 
@@ -104,6 +131,7 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ## 👤 Autor
 
+<<<<<<< HEAD
 DevNayaraVieira - [Protfólio](https://portfolio-devnayaravieira.netlify.app)
 
 ---
@@ -111,3 +139,10 @@ DevNayaraVieira - [Protfólio](https://portfolio-devnayaravieira.netlify.app)
 ⭐️ From [DevNayaraVieira](https://github.com/devnayaravieira)
 =======
 # projeto-calculadora
+=======
+Seu Nome - [seu-site.com](https://seu-site.com)
+
+---
+
+⭐️ From [seu-usuario](https://github.com/seu-usuario)
+>>>>>>> 23038c7324fb1e0520a958c5a95bfa09d806228e
