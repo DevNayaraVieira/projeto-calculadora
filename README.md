@@ -70,6 +70,19 @@ calculadora-rosa/
 
 ![Calculadora - Tema Escuro](assets/img/favicons/print2.png)
 
+## Instalação e Execução
+
+O jogo não requer instalação. Para jogar:
+
+1. Clone este repositório:
+   ```
+   git clone https://github.com/devnayaravieira/projeto-calculadora.git
+   ```
+
+2. Abra o arquivo `index.html` em um navegador moderno (Chrome, Firefox, Edge, Safari)
+
+Ou acesse [a versão online](https://calculadora-nayara.netlify.app) para jogar imediatamente.
+
 ## 💡 Uso
 
 - Use os botões numéricos para inserir valores
