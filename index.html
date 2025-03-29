@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - DevNayaraVieira</title>
+    <meta name="description" content="Calculadora profissional com design moderno em rosa bebê e azul. Ideal para cálculos do dia a dia.">
+    <meta name="author" content="Nayara Nunes Vieira">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="assets/img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicons/favicon.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Elementos decorativos de fundo -->
+    <div class="bg-decoration bg-decoration-1"></div>
+    <div class="bg-decoration bg-decoration-2"></div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Toggle do tema -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Container principal -->
+    <div class="calculator-wrapper">
+        <div class="calculator">
+            <!-- Visor da calculadora -->
+            <div class="calculator-display">
+                <div class="operation-display" id="operationDisplay" aria-live="polite"></div>
+                <div class="result-display" id="resultDisplay">0</div>
+            </div>
+
+            <!-- Painel de histórico -->
+            <div class="history-panel" id="historyPanel">
+                <div class="history-content">
+                    <div class="history-title">
+                        <i class="fas fa-history"></i>
+                        <span>Histórico</span>
+                    </div>
+                    <ul class="history-list" id="historyList">
+                        <li class="empty-history">
+                            <span class="history-equation">Sem histórico</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Teclado da calculadora -->
+            <div class="calculator-keypad">
+                <!-- Primeira linha -->
+                <button class="calculator-key key-all-clear" data-action="all-clear" aria-label="Limpar tudo">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                <button class="calculator-key key-clear" data-action="clear" aria-label="Limpar última entrada">
+                    <i class="fas fa-backspace"></i>
+                </button>
+                <button class="calculator-key key-function" data-action="percent" aria-label="Porcentagem">
+                    <i class="fas fa-percent"></i>
+                </button>
+                <button class="calculator-key key-operation" data-operation="/" aria-label="Dividir">
+                    <i class="fas fa-divide"></i>
+                </button>
+
+                <!-- Segunda linha -->
+                <button class="calculator-key key-digit" data-digit="7">7</button>
+                <button class="calculator-key key-digit" data-digit="8">8</button>
+                <button class="calculator-key key-digit" data-digit="9">9</button>
+                <button class="calculator-key key-operation" data-operation="*" aria-label="Multiplicar">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- Terceira linha -->
+                <button class="calculator-key key-digit" data-digit="4">4</button>
+                <button class="calculator-key key-digit" data-digit="5">5</button>
+                <button class="calculator-key key-digit" data-digit="6">6</button>
+                <button class="calculator-key key-operation" data-operation="-" aria-label="Subtrair">
+                    <i class="fas fa-minus"></i>
+                </button>
+
+                <!-- Quarta linha -->
+                <button class="calculator-key key-digit" data-digit="1">1</button>
+                <button class="calculator-key key-digit" data-digit="2">2</button>
+                <button class="calculator-key key-digit" data-digit="3">3</button>
+                <button class="calculator-key key-operation" data-operation="+" aria-label="Adicionar">
+                    <i class="fas fa-plus"></i>
+                </button>
+
+                <!-- Quinta linha -->
+                <button class="calculator-key key-function" data-action="sign" aria-label="Alternar sinal">
+                    <i class="fas fa-plus-minus"></i>
+                </button>
+                <button class="calculator-key key-digit" data-digit="0">0</button>
+                <button class="calculator-key key-digit" data-digit="." aria-label="Ponto decimal">
+                    <i class="fas fa-circle"></i>
+                </button>
+                <button class="calculator-key key-equals" data-action="equals" aria-label="Calcular">
+                    <i class="fas fa-equals"></i>
+                </button>
+            </div>
+
+            <!-- Footer com botões de ação -->
+            <div class="calculator-footer">
+                <button class="history-toggle" id="historyToggle" aria-label="Mostrar histórico">
+                    <i class="fas fa-history"></i>
+                    <span>Histórico</span>
+                </button>
+            </div>
+        </div><!-- Fechamento da div calculator que estava faltando -->
+
+        <!-- Informações do autor -->
+        <div class="author-info">
+            <div class="author-brand">
+                <i class="fas fa-gem"></i> Calculadora DevNayaraVieira
+            </div>
+            <p>&copy; Todos os Direitos Reservados Nayara Nunes Vieira 2025</p>
+        </div>
+    </div>
+    <a href="https://portfolio-devnayaravieira.netlify.app" id="backToPortfolioBtn" class="portfolio-return-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Voltar ao Portfólio</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="assets/js/calculator.js"></script>
+    <script src="assets/js/history.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/ui.js"></script>
+</body>
+</html>
