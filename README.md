@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Calculadora Profissional - Rosa Bebê com Detalhes em Azul
 
 ![Versão](https://img.shields.io/badge/versão-1.0.0-FF9EB5)
@@ -127,3 +128,6 @@ Seu Nome - [seu-site.com](https://seu-site.com)
 ---
 
 ⭐️ From [seu-usuario](https://github.com/seu-usuario)
+=======
+# projeto-calculadora
+>>>>>>> 10bfe5c61373d839f2fd6b47d656e66dd5c27dcb
